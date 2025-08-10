@@ -30,7 +30,7 @@ import { getUsersFireStore } from './Functions/getFirebaseDB.js';
 
 
 dotenv.config({
-    path: path.join(__dirname, "../.env")
+    path: path.join(process.cwd(), ".env")
 });
 
 // App setup
