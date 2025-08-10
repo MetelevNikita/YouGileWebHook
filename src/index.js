@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
+import path from 'path'
 
 // router
 
@@ -28,7 +29,9 @@ import { getUsersFireStore } from './Functions/getFirebaseDB.js';
 
 
 
-dotenv.config();
+dotenv.config({
+    path: path.join(__dirname, "../.env")
+});
 
 // App setup
 
@@ -58,29 +61,28 @@ const PORT = process.env.PORT || 4000;
 
 // yougile
 
-const getDataYougile = async () => {
-    const companyId = await getYougileCompany(1)
-    const key = await getYougileKey(companyId)
+// const getDataYougile = async () => {
+//     const companyId = await getYougileCompany(1)
+//     const key = await getYougileKey(companyId)
 
-    console.log(companyId)
-    console.log(key)
-
-
-    const allHook = await getYougileHook(key);
+//     console.log(companyId)
+//     console.log(key)
 
 
-    allHook.map((item) => {
-        deleteAllYougileHooks(item.id, key, item.url)
-    })
+//     const allHook = await getYougileHook(key);
 
-    const hook = await createYougileHook(key)
-    console.log(hook)
 
-    console.log(allHook)
+//     allHook.map((item) => {
+//         deleteAllYougileHooks(item.id, key, item.url)
+//     })
 
-}
+//     const hook = await createYougileHook(key)
+//     console.log(hook)
+//     console.log(allHook)
 
-getDataYougile()
+// }
+
+// getDataYougile()
 
 
 

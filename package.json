@@ -18,9 +18,12 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "prisma": "^6.10.0"
   },
   "dependencies": {
+    "@prisma/client": "^6.10.0",
+    "bcryptjs": "^3.0.2",
     "firebase": "^11.9.0",
     "node-fetch": "^3.3.2",
     "node-telegram-bot-api": "^0.66.0"
